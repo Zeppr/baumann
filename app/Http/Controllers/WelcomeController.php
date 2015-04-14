@@ -1,4 +1,9 @@
-<?php namespace App\Http\Controllers;
+<?php 
+
+namespace App\Http\Controllers;
+
+use File;
+
 
 class WelcomeController extends Controller {
 
@@ -30,6 +35,17 @@ class WelcomeController extends Controller {
 	 */
 	public function index()
 	{
+		return view('welcome');
+	}
+
+	/**
+	 * make folder
+	 *
+	 * @return Response
+	 */
+	public function mkdir()
+	{
+		$result = File::makeDirectory(env('STORAGE_FOLDER').'test');
 		return view('welcome');
 	}
 
